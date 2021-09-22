@@ -260,6 +260,8 @@ FMT and ARGS passed `message'."
                (:description . "Run Perl script")))
     ("perl6" . ((:command . "perl6") (:compile-only . "%c -c %s")
                 (:description . "Run Perl6 script")))
+    ("raku" . ((:command . "raku") (:compile-only . "%c -c %s")
+                (:description . "Run Raku script")))
     ("ruby/ruby" . ((:command . "ruby") (:compile-only . "%c -wc %s")
                     (:description . "Run Ruby script")))
     ("ruby/mruby" . ((:command . "mruby")
@@ -501,6 +503,7 @@ if you set your own language configuration.")
     ("\\.cs\\'" . "c#")
     ("\\.\\(pl\\|pm\\)\\'" . "perl")
     ("\\.p[ml]?6\\'" . "perl6")
+    ("\\.raku\\(?:mod\\)?'" . "raku")
     ("\\.rb\\'" . "ruby")
     ("\\.py\\'" . "python")
     ("\\.php\\'" . "php")
@@ -556,6 +559,7 @@ if you set your own language configuration.")
     (csharp-mode . "c#")
     ((perl-mode cperl-mode) . "perl")
     (perl6-mode . "perl6")
+    (raku-mode . "raku")
     (ruby-mode . "ruby")
     (python-mode . "python")
     (php-mode . "php")
@@ -1173,7 +1177,7 @@ Place holders are beginning with '%' and replaced by:
 ;;
 
 (defconst quickrun--support-languages
-  '("c" "c++" "objc" "c#" "perl" "perl6" "ruby" "python" "php" "emacs" "lisp" "scheme" "st"
+  '("c" "c++" "objc" "c#" "perl" "perl6" "raku" "ruby" "python" "php" "emacs" "lisp" "scheme" "st"
     "racket" "javascript" "clojure" "erlang" "ocaml" "fsharp" "go" "io" "haskell" "java"
     "d" "markdown" "coffee" "scala" "groovy" "sass" "less" "shellscript" "awk"
     "lua" "rust" "dart" "elixir" "tcl" "jsx" "typescript" "fortran" "haml"
@@ -1250,6 +1254,7 @@ by quickrun.el. But you can register your own command for some languages")
     ("c#" . ("dotnet" "mono"))
     ("fortran" . ("gfortran"))
     ("javascript" . ("node" "v8" "js" "jrunscript" "cscript"))
+    ("raku" . ("raku"))
     ("ruby" . ("ruby" "mruby"))
     ("lisp" . ("clisp" "sbcl" "ccl"))
     ("scheme" . ("gosh"))
